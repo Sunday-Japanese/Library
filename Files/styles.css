@@ -1,0 +1,25 @@
+:root {
+    --gap-size: 10px;
+}
+
+body {
+    margin:0;
+    padding: var(--gap-size);
+    min-height: 100vh;
+    display: grid;
+    gap: var(--gap-size);
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr);
+}
+
+
+.card {
+    border:solid;
+    border-color: black;
+    white-space: pre-line;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
