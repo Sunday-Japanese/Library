@@ -1,6 +1,9 @@
 const myLibrary = [];
 let libraryForm = document.querySelector("#libraryForm");
 let bookName = document.querySelector("#bookName");
+let author = document.querySelector("#author");
+let lang = document.querySelector("#lang");
+let pages = document.querySelector("#pages");
 
 let addBook = document.querySelector(".addBook");
 addBook.addEventListener("click",() => {libraryForm.showModal()})
@@ -11,14 +14,17 @@ close.addEventListener("click",() => {libraryForm.close()})
 let submit = document.querySelector(".submit");
 submit.addEventListener("click",(event) => {
     let bookValue = bookName.value;
+    let authorValue = author.value;
+    let langValue = lang.value;
+    let pagesValue = pages.value;
 
     event.preventDefault();
-    addBookToLibrary(bookValue,'hi','why',412);
+    addBookToLibrary(bookValue,authorValue,langValue,pagesValue);
     
     bookName.value = "";
     libraryForm.close();
 
-    showLibrary();
+    currentBook();
 })
 
 addBookToLibrary('Epic Shit Done','Ankur Warikoo','English',312)
@@ -59,15 +65,34 @@ function showLibrary() {
     let text = document.createElement("p");
     text.classList.add("text");
     
+    let btn = document.createElement("button");
+    btn.classList.add("btn");
+    btn.innerText = "remove";
 
     text.textContent = myLibrary[i];
 
     card.appendChild(text);
     document.body.appendChild(card);
+    card.appendChild(btn)
     }
 }
 
+function currentBook() {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    
 
+    let text = document.createElement("p");
+    text.classList.add("text");
+    
+
+    text.textContent = myLibrary[myLibrary.length - 1];
+
+    card.appendChild(text);
+    document.body.appendChild(card);
+}
+
+btn.addEventListener("click",() => {})
 
 
 
