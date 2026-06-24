@@ -100,7 +100,6 @@ function showLibrary() {
 function currentBook() {
     let card = document.createElement("div");
     card.classList.add("card");
-    
 
     let text = document.createElement("p");
     text.classList.add("text");
@@ -137,6 +136,7 @@ function currentBook() {
     document.body.appendChild(card);
     card.appendChild(btn);
     card.appendChild(btnn);
+
 }
 
 

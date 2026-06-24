@@ -10,6 +10,7 @@ body {
     gap: var(--gap-size);
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(3,1fr);
+    background-color: rgb(241, 114, 114);
 }
 
 
@@ -21,6 +22,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-color: yellow;
+    color: rgb(26, 164, 52);
+    font-weight: 900;
+    font-size: 19px;
 }
 
 .header{
@@ -52,5 +58,17 @@ form {
 input {
     display:flex;
     border-radius: var(--gap-size);
+}
+
+button {
+    padding: 5px 20px 5px 20px;
+    border-radius: var(--gap-size);
+    background-color: aquamarine;
+    border: solid;
+    border-width: 1px;
+    font-weight: 900;
+    color: rgb(42, 33, 210);
+    border-color: blueviolet;
+    font-size: 17px;
 }
 
