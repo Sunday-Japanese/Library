@@ -41,12 +41,12 @@ function Book (name, author, language, pages) {
     if (!new.target) {
         throw Error ('new is not present after the constructor function')
     }
-        this.id = crypto.randomUUID(),
+        this.id = crypto.randomUUID(),  //specifically can't find a use for it ???
         this.name = name,
         this.author = author,
         this.language = language,
         this.pages = pages,
-        this.summary = `ID: ${this.id} \n Book: ${name} \n Author: ${author} \n Language: ${language} \n Pages: ${pages}`
+        this.summary = `Book: ${name} \n Author: ${author} \n Language: ${language} \n Pages: ${pages}`
     }
 
 function addBookToLibrary(name, author,language,pages) {
@@ -69,11 +69,31 @@ function showLibrary() {
     btn.classList.add("btn");
     btn.innerText = "remove";
 
+    let btnn = document.createElement("button");
+    btnn.classList.add("btnn");
+    btnn.innerText = "read";
+
     text.textContent = myLibrary[i];
+
+    btnn.addEventListener("click",() => {
+        if (btnn.innerText === "read") {
+            return btnn.innerText = "didn't read"
+        } else if (btnn.innerText === "didn't read") {
+            return btnn.innerText = "read"
+        } else {
+            return console.log("")
+        }
+    })
+
+    btn.addEventListener("click",() => {
+    text.innerText = "";
+    card.remove();
+})
 
     card.appendChild(text);
     document.body.appendChild(card);
-    card.appendChild(btn)
+    card.appendChild(btn);
+    card.appendChild(btnn);
     }
 }
 
@@ -85,14 +105,41 @@ function currentBook() {
     let text = document.createElement("p");
     text.classList.add("text");
     
+    let btn = document.createElement("button");
+    btn.classList.add("btn");
+    btn.innerText = "remove";
+
+    let btnn = document.createElement("button");
+    btnn.classList.add("btnn");
+    btnn.innerText = "read";
+
+    btnn.addEventListener("click",() => {
+    if (btnn.innerText === "read") {
+    return btnn.innerText = "didn't read"
+    } else if (btnn.innerText === "didn't read") {
+    return btnn.innerText = "read"
+    } else {
+        return console.log("")
+    }
+    })
+
+
+
+    btn.addEventListener("click",() => {
+    text.innerText = "";
+    card.remove();
+})
+
 
     text.textContent = myLibrary[myLibrary.length - 1];
 
     card.appendChild(text);
     document.body.appendChild(card);
+    card.appendChild(btn);
+    card.appendChild(btnn);
 }
 
-btn.addEventListener("click",() => {})
+
 
 
 
