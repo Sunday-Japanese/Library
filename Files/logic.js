@@ -1,24 +1,32 @@
 const myLibrary = [];
+let libraryForm = document.querySelector("#libraryForm");
+let bookName = document.querySelector("#bookName");
+
+let addBook = document.querySelector(".addBook");
+addBook.addEventListener("click",() => {libraryForm.showModal()})
+
+let close = document.querySelector(".close");
+close.addEventListener("click",() => {libraryForm.close()})
+
+let submit = document.querySelector(".submit");
+submit.addEventListener("click",(event) => {
+    let bookValue = bookName.value;
+
+    event.preventDefault();
+    addBookToLibrary(bookValue,'hi','why',412);
+    bookValue = "";
+    libraryForm.close();
+
+})
 
 addBookToLibrary('Epic Shit Done','Ankur Warikoo','English',312)
 addBookToLibrary('Atomic Habits','James Clear', 'English', 435)
 addBookToLibrary('You Can', 'George Matthew Adams', 'English', 234)
 addBookToLibrary('Deep Work','Cal Newport', 'English', 342)
-addBookToLibrary()
-addBookToLibrary()
-addBookToLibrary()
-addBookToLibrary()
-addBookToLibrary()
-addBookToLibrary()
-addBookToLibrary()
 
 showLibrary()
 
 console.log(myLibrary.length)
-
-
-
-
 
 function Book (name, author, language, pages) {
   // the constructor...

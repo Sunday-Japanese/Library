@@ -9,6 +9,28 @@
 
 </head>
 <body>
-    
+    <div class="header">
+        <button class="addBook">Add Book</button>
+    </div>
+
+    <dialog id="libraryForm" >
+        <p>Write input details to the book in the Library</p>
+        <form method="post" >
+            <label for="bookName">Book Name:</label>
+            <input name="bookName" id="bookName" type="text" required> <br>
+            <label for="author">Author:</label> 
+            <input type="text" name="author" id="author" required> <br>
+            <label for="lang">Language:</label>
+            <input type="text" name="lang" id="lang" required><br>
+            <label for="pages">Pages:</label>
+            <input type="text" name= "pages" id="pages"  required><br>
+        </form>
+
+        <div class="btn">
+            <button type="close" class="close">close</button>
+            <button type="submit" class="submit">submit</button>
+        </div>
+        
+    </dialog>
 </body>
 </html>

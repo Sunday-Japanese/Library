@@ -23,3 +23,34 @@ body {
     align-items: center;
 }
 
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#libraryForm { 
+    min-height: auto;
+    min-width: auto;
+    padding: var(--gap-size);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:var(--gap-size)
+}
+
+input {
+    display:flex;
+    border-radius: var(--gap-size);
+}
+
