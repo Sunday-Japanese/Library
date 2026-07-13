@@ -27,7 +27,7 @@ submit.addEventListener("click",(event) => {
     currentBook();
 })
 
-showLibrary()
+
 
 class Book  {
   // the constructor
@@ -55,6 +55,8 @@ addBookToLibrary('Epic Shit Done','Ankur Warikoo','English',312)
 addBookToLibrary('Atomic Habits','James Clear', 'English', 435)
 addBookToLibrary('You Can', 'George Matthew Adams', 'English', 234)
 addBookToLibrary('Deep Work','Cal Newport', 'English', 342)
+
+showLibrary()
 
 function showLibrary() {
     for (i = 0; i < myLibrary.length; i++) {
