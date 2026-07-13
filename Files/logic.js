@@ -27,17 +27,11 @@ submit.addEventListener("click",(event) => {
     currentBook();
 })
 
-addBookToLibrary('Epic Shit Done','Ankur Warikoo','English',312)
-addBookToLibrary('Atomic Habits','James Clear', 'English', 435)
-addBookToLibrary('You Can', 'George Matthew Adams', 'English', 234)
-addBookToLibrary('Deep Work','Cal Newport', 'English', 342)
+showLibrary()
 
-/showLibrary()
-
-console.log(myLibrary.length)
-
-function Book (name, author, language, pages) {
+class Book  {
   // the constructor
+constructor (name, author, language, pages) {
     if (!new.target) {
         throw Error ('new is not present after the constructor function')
     }
@@ -47,13 +41,20 @@ function Book (name, author, language, pages) {
         this.language = language,
         this.pages = pages,
         this.summary = `Book: ${name} \n Author: ${author} \n Language: ${language} \n Pages: ${pages}`
+}
     }
 
 function addBookToLibrary(name, author,language,pages) {
 let libraryBook = new Book(name, author, language, pages);
 
-return myLibrary.push(libraryBook.summary)
+return myLibrary.push(libraryBook)
 }
+
+
+addBookToLibrary('Epic Shit Done','Ankur Warikoo','English',312)
+addBookToLibrary('Atomic Habits','James Clear', 'English', 435)
+addBookToLibrary('You Can', 'George Matthew Adams', 'English', 234)
+addBookToLibrary('Deep Work','Cal Newport', 'English', 342)
 
 function showLibrary() {
     for (i = 0; i < myLibrary.length; i++) {
@@ -73,7 +74,7 @@ function showLibrary() {
     btnn.classList.add("btnn");
     btnn.innerText = "read";
 
-    text.textContent = myLibrary[i];
+    text.textContent = myLibrary[i].summary;
 
     btnn.addEventListener("click",() => {
         if (btnn.innerText === "read") {
@@ -130,7 +131,7 @@ function currentBook() {
 })
 
 
-    text.textContent = myLibrary[myLibrary.length - 1];
+    text.textContent = myLibrary[myLibrary.length - 1].summary;
 
     card.appendChild(text);
     document.body.appendChild(card);
